@@ -3,7 +3,6 @@ use strict;
 use warnings;
 
 use Perl::Metrics::Simple;
-use Text::MicroTemplate::DataSection;
 use Text::Xslate;
 
 #====================================================
@@ -77,7 +76,6 @@ __DATA__
 : for $sub_stats.keys() -> $file_path {
   <file name="<: $file_path :>">
   : for $sub_stats[$file_path] -> $sub_stat {
-    : next if !$sub_stat
     : if $sub_stat.lines >= $metric_threshold.max_sub_length {
       <error line="1" column="1" severity="error" message="'<: $sub_stat.name :>' method length is <: $sub_stat.lines :> lines." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
     : } elsif $sub_stat.mccabe_complexity >= $metric_threshold.max_cyclomatic_complexity {
