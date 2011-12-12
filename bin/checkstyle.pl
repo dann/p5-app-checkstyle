@@ -26,6 +26,7 @@ sub check_style {
     my $paths    = shift;
     my $analzyer = Perl::Metrics::Simple->new;
     my $analysis = $analzyer->analyze_files(@ARGV);
+    return $analysis;
 }
 
 sub make_report {
