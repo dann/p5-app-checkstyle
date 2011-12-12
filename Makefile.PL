@@ -21,7 +21,8 @@ all_from 'lib/App/checkstyle.pm';
 
 requires(
     'Perl::Metrics::Simple' => 0,
-    'Text::Xslate'          => 0
+    'Text::Xslate'          => 0,
+    'Data::Section::Simple' => 0
 );
 
 test_requires( 'Test::More' => 0.88, );

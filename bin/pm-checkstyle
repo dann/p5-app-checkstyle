@@ -4,6 +4,7 @@ use warnings;
 
 use Perl::Metrics::Simple;
 use Text::Xslate;
+use Data::Section::Simple;
 
 #====================================================
 # Config
